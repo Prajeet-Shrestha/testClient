@@ -1,0 +1,240 @@
+.postContainer {
+  width: 720px;
+  /* background-color: red; */
+  margin: 0 auto;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome, Edge, Opera and Firefox */
+  /* padding: 100px; */
+}
+
+h2 {
+  margin: 0;
+}
+
+.topBar {
+  margin-bottom: 20px;
+  padding: 6px 16px 6px 32px;
+  display: flex;
+  /* background-color: royalblue; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.typeContent {
+  width: fit-content;
+  /* background-color: red; */
+}
+
+.mindBridgeFilter {
+  display: flex;
+  flex-direction: row;
+  /* background-color: red; */
+  align-items: center;
+  align-items: flex-start;
+  padding: 8px 8px 8px 10px;
+
+  /* Primary/Background - Grey */
+  cursor: pointer;
+  /* background: #fafafa; */
+  /* Border/Border - Dark Grey */
+
+  border: 1px solid #bebebe;
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: fit-content;
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+
+  margin: 0px 0px;
+  margin-left: 8px;
+}
+
+.mindBridgeFilter.hasFilter {
+  width: 122px;
+}
+
+.postCTA {
+  /* background-color: hotpink; */
+  display: flex;
+  align-items: center;
+}
+
+.postCTA button {
+  font-weight: 500 !important;
+}
+.filterText {
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  margin-right: 4px;
+}
+
+.filterNumber {
+  display: block;
+  margin-right: 4px;
+  background: #eeeeee;
+  border-radius: 100%;
+  width: 18px;
+  text-align: center;
+  height: 18px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.selector {
+  /* background-color: green; */
+  height: 20px !important;
+
+  width: fit-content;
+}
+
+.filterBox {
+  /* background-color: red; */
+  height: 40px !important;
+  position: relative;
+}
+
+.optionMenu {
+  position: absolute;
+  float: right;
+  z-index: 3;
+  width: 189px;
+  height: fit-content;
+  margin-top: 7px;
+  box-sizing: border-box;
+  right: 1px;
+  border-radius: 4px;
+  padding: 8px 0px;
+  background: #ffffff;
+
+  border: 1px solid #f0f0f0;
+
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.24);
+  border-radius: 4px;
+}
+
+.optionMenu hr {
+  border: 1px solid var(--dividerGrey);
+  margin: 8px 0px;
+}
+.checkbox {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  padding: 0%;
+  /* background-color: red; */
+}
+
+.filterOptionText,
+.filterOption-double .filterOptionText {
+  font-size: 14px;
+  text-align: left;
+  line-height: 15px;
+  font-weight: 400;
+  margin: 0px 8px;
+  /* background-color: hotpink; */
+  color: #000000;
+}
+
+.filterOption-single {
+  display: flex;
+  align-items: center;
+}
+
+.filterOption-single.status {
+  padding-left: 16px;
+  display: flex;
+  /* background-color: red; */
+  align-items: center;
+}
+
+.filterOption-single.date {
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
+}
+.filterOption-double {
+  background-color: #fafafa;
+
+  /* background-color: red; */
+}
+
+.filterOption-double .statusOption {
+  display: flex;
+  padding-left: 16px;
+  /* background-color: hotpink; */
+  align-items: center;
+}
+
+.marginbottom-8 {
+  margin-bottom: 8px;
+}
+
+input:checked {
+  fill: #1c68fc;
+}
+
+.filterOption-between {
+  padding-left: 16px;
+  /* background-color: rebeccapurple; */
+  border-radius: 0px 0px 2px 2px;
+}
+
+.filterOption-between .text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.between-box {
+  display: flex;
+  margin-top: 5px;
+  align-items: center;
+}
+
+.dataInput {
+  width: 69px;
+  height: 26px;
+  padding: 5px 10px;
+  background: #ffffff;
+  /* Border/Border - Grey */
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 16px;
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+  border-radius: var(--borderRadius);
+  outline: none;
+}
+
+.dataInput:focus {
+  border: 1px solid #1653c9;
+  /* border: ; */
+}
+
+.dataInput + div {
+  margin: 0 6px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.mat-date-range-input-container {
+  display: flex;
+  align-items: none !important;
+  background-color: red;
+}

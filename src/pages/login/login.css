@@ -1,0 +1,225 @@
+.title {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: fit-content;
+}
+.form {
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+  border-radius: var(--borderRadius);
+  padding: 15px;
+}
+.checkMail {
+  margin-bottom: 12px;
+  background: #f7fdf9;
+  color: #00b528;
+  border: 1px solid #00b528;
+  box-sizing: border-box;
+  border-radius: var(--borderRadius);
+  padding: 10px 120px;
+  white-space: nowrap;
+}
+input {
+  height: 40px;
+  background: #ffffff;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+  border-radius: var(--borderRadius);
+}
+
+.ForumName input {
+  width: 173px;
+}
+.ForumEmail input {
+  width: 360px;
+}
+.formInputBox {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.ForumName p,
+.ForumEmail p,
+.FormURL p {
+  margin-bottom: 8px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.TermsofUseSection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.TermsofUseSection input {
+  height: 13px;
+  width: 13px;
+  cursor: pointer;
+  margin-right: 8px;
+  background-color: lawngreen;
+}
+
+.TermsofUseSection span {
+  font-size: 14px;
+  padding: 0;
+  line-height: 20px;
+  width: fit-content;
+  /* background-color: red; */
+}
+.invalidEmailErrorSection {
+  height: fit-content;
+  margin: 0px 0px 8px 0px;
+  display: flex;
+  /* align-items: center; */
+}
+.invalidEmailErrorSection p {
+  margin-left: 7px;
+}
+.invalidEmailErrorSVG {
+  width: 18px;
+  height: 18px;
+}
+button {
+  /* width: 143px; */
+  height: 40px;
+}
+
+.SignUpPageRedirect {
+  margin: 0 auto;
+  /* background-color: red; */
+  text-align: center;
+
+  height: 20px;
+  margin-top: 20px;
+  white-space: nowrap;
+}
+.blue {
+  color: #1c68fc;
+}
+.btn {
+  cursor: pointer;
+}
+
+.underLine {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.step1.hide {
+  display: none;
+}
+.step2.hide {
+  display: none;
+}
+
+.loginWithPW.hide {
+  display: none;
+}
+.optionBox {
+  display: none;
+}
+.optionBox.show {
+  display: block;
+  width: 360px;
+  position: absolute;
+  background: #eeeeee;
+  margin-top: 4px;
+  border: 1px solid #bebebe;
+  box-sizing: border-box;
+  border-radius: var(--borderRadius);
+}
+
+.item {
+  padding-left: 24px;
+  cursor: pointer;
+}
+
+.item:hover {
+  background: #ffffff;
+}
+
+.selectorIcon {
+  position: absolute;
+  margin-right: 20px;
+  /* left: 20px; */
+  /* right: 10px; */
+  /* top: 19.4%; */
+  /* bottom: 13.15%; */
+}
+
+.dropDown {
+  background: url(../../assets/selector_icon.svg) no-repeat scroll right;
+  background-position-x: 339px;
+}
+.imgUpload {
+  margin: 0% auto;
+  width: fit-content;
+}
+
+.imgUpload input {
+  display: none;
+}
+
+.imgUpload img {
+  border: none;
+  outline: none;
+  width: 90px;
+  cursor: pointer;
+  margin: 0 auto;
+  background: #eeeeee;
+  height: 90px;
+  border-radius: 100%;
+}
+
+.imgUpload div {
+  white-space: nowrap;
+  width: 73px;
+  text-align: center;
+  height: 17px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 14px;
+}
+
+.loginWithPW .form {
+  height: fit-content;
+}
+
+.loginWithPW .FormURL input {
+  width: 125px;
+}
+
+.step2 .form {
+  height: fit-content;
+}
+
+.invaild {
+  border: 1px solid #e50101;
+}
+
+.buttonFlex {
+  display: flex;
+  margin: 0%;
+  align-items: center;
+  padding: 0%;
+}
+
+.loginBtn {
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+
+.setNewPW {
+  padding: 0%;
+  width: fit-content;
+  white-space: nowrap;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 14px;
+  color: var(--black-60E);
+}

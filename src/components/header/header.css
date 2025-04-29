@@ -1,0 +1,210 @@
+.header {
+  padding: 0px 20px;
+  display: flex;
+  /* background-color: red; */
+  /* align-items: center; */
+  /* height: 100px; */
+  justify-content: space-between;
+}
+.redBorder {
+  border: 1px solid var(--errorRed) !important;
+}
+.headerContainer {
+  z-index: 3;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.brand {
+  display: flex;
+  /* background-color: lawngreen; */
+  width: fit-content;
+  align-items: center;
+  cursor: pointer;
+}
+
+.iconMindBridge {
+  margin: 25px 0;
+  width: 30px;
+  height: 30px;
+}
+
+.iconMindBridge svg {
+  width: 30px;
+  height: 30px;
+}
+
+.brand .brandName {
+  margin: 25px 40px 25px 10px;
+  height: fit-content;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  /* background-color: red; */
+}
+
+.menu {
+  display: none;
+}
+
+svg {
+  margin: 0%;
+  padding: 0%;
+}
+
+hr {
+  margin: 0%;
+  padding: 0%;
+}
+
+.dropdownOption {
+  display: block;
+  /* background-color: lightcoral; */
+  text-align: right;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.menuItem {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+  color: #000000;
+}
+
+.desktop {
+  display: flex;
+  align-items: center;
+}
+
+.search input,
+.search {
+  width: 360px;
+  height: 36px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+  line-height: 20px;
+  color: black;
+}
+
+.search {
+  display: flex;
+  margin-right: 25px;
+  position: relative;
+  background: #ffffff;
+  /* Border/Border */
+
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  /* Search bar - Shadow */
+
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+
+.search svg {
+  position: absolute;
+  left: 330px;
+  cursor: pointer;
+  top: 8px;
+}
+
+.search input {
+  padding: 8px 10px;
+}
+
+.search input:focus {
+  border: 1px solid #1653c9;
+}
+
+.loginBtn {
+  font-style: normal;
+  font-weight: 600;
+
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@media (max-width: 1080px) {
+  .headerContainer {
+    /* width: fill; */
+    width: stretch;
+
+    /* overflow: scroll; */
+
+    padding: 0px 0px;
+    display: block;
+    justify-content: space-between;
+  }
+  .header {
+    /* justify-content: left; */
+    padding: 0;
+  }
+
+  .mindBridgeMainContainer {
+    /* background-color: royalblue; */
+    padding: 0vw;
+    margin: 0;
+    width: inherit !important;
+    padding: 14px 16px;
+  }
+  .brand .brandName {
+    display: none;
+  }
+
+  .iconMindBridge {
+    margin: 0;
+    padding: 3px 16px;
+
+    /* background-color: saddlebrown; */
+  }
+
+  .desktop {
+    /* background-color: seagreen; */
+    width: fit-content;
+  }
+  .desktop .search input,
+  .search {
+    width: 190px;
+    height: 36px;
+    border: 1px solid #eeeeee;
+    box-sizing: border-box;
+    border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+    line-height: 20px;
+    color: #959da5;
+  }
+
+  .search {
+    display: flex;
+    margin-right: 20px;
+    position: relative;
+  }
+
+  .search svg {
+    position: absolute;
+    left: 160px;
+    cursor: pointer;
+    top: 8px;
+  }
+
+  .search input {
+    padding: 8px 10px;
+  }
+}
