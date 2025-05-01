@@ -12,7 +12,7 @@ function Dashboard({ setisLoggedIn, userDetails }) {
           <div className='img'>
             <img src='https://avatar.iran.liara.run/public/68' />
           </div>
-          <h4>{userDetails.name}</h4>
+          <h4>{userDetails?.name}</h4>
         </div>
         <div className='menuBtn active'>
           <div className='iconContainer'>

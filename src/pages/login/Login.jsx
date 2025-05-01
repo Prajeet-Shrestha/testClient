@@ -67,20 +67,22 @@ function Login({ setisLoggedIn }) {
                   onClick={async (e) => {
                     seterrorName("");
                     setisLoading(true);
-                    try {
-                      e.preventDefault(); // Prevent form submission
-                      console.log({ email, password });
-                      const res = await loginUser(email, password);
-                      setisLoggedIn(true);
-                      localStorage.removeItem("user");
-                      localStorage.setItem("user", JSON.stringify(res.result.jwtToken));
-                      nav("/dashboard");
-                      console.log(res);
-                    } catch (error) {
-                      seterrorName(error.toString());
-                    } finally {
-                      setisLoading(false);
-                    }
+                    if (isLoading || email.length <= 0 || password.length <= 0) {
+                    } else
+                      try {
+                        e.preventDefault(); // Prevent form submission
+                        console.log({ email, password });
+                        const res = await loginUser(email, password);
+                        setisLoggedIn(true);
+                        localStorage.removeItem("user");
+                        localStorage.setItem("user", JSON.stringify(res.result.jwtToken));
+                        nav("/dashboard");
+                        console.log(res);
+                      } catch (error) {
+                        seterrorName(error.toString());
+                      } finally {
+                        setisLoading(false);
+                      }
                   }}>
                   {isLoading ? "Verifying.." : "Login"}
                 </button>

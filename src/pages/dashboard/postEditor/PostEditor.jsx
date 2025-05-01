@@ -5,6 +5,7 @@ import "quill/dist/quill.snow.css"; // Import Quill styles
 import "./postEditor.css";
 import { useNavigate } from "react-router-dom";
 import { createPost } from "../../../apis/api";
+import { Button, Modal, Spinner, Toast, ToastContainer } from "react-bootstrap";
 
 function PostEditor({ userDetails }) {
   const editorRef = useRef(null);
@@ -13,7 +14,8 @@ function PostEditor({ userDetails }) {
   const [title, setTitle] = useState("");
   const [subTitle, setSubTitle] = useState("");
   const [keywords, setKeyWords] = useState("");
-  const [imageUrl, setImageUrl] = useState("https://t4.ftcdn.net/jpg/08/09/09/83/360_F_809098361_z45jKPDGsYymmTJcFQvp3VGTPgGuY35L.jpg");
+  const [imageUrl, setImageUrl] = useState("");
+  const [isPostingContent, setisPostingContent] = useState(false);
   const nav = useNavigate();
 
   useEffect(() => {
@@ -33,6 +35,8 @@ function PostEditor({ userDetails }) {
 
   const handlePostSubmit = async (e) => {
     e.preventDefault();
+    setshowToast(false);
+
     let editorContent = "";
     if (quillInstance.current) {
       editorContent = quillInstance.current.root.innerHTML;
@@ -50,9 +54,12 @@ function PostEditor({ userDetails }) {
     };
     const response = await createPost(title, imageUrl, subTitle, editorContent, keywords, userDetails.name, userDetails.email, userDetails.jwt);
     console.log({ response });
+    setisPostingContent(false);
+    setshowToast(true);
+
     console.log("Post Data:", postData);
   };
-
+  const [showToast, setshowToast] = useState(false);
   return (
     <div>
       <div className={`cp-parent`}>
@@ -96,19 +103,20 @@ function PostEditor({ userDetails }) {
                 <p>March 2025</p>
               </div>
               <div className='cp-footer-mid-right'>
-                <button
+                {/* <button
                   className='cp-settingBtn'
                   onClick={(e) => {
                     setisShowEditor(true);
                   }}>
                   Setting
-                </button>
+                </button> */}
                 <button
                   className='cp-postBtn'
                   onClick={(e) => {
-                    handlePostSubmit(e);
+                    // handlePostSubmit(e);
+                    setisShowEditor(true);
                   }}>
-                  Post
+                  Next
                 </button>
               </div>
             </div>
@@ -154,7 +162,7 @@ function PostEditor({ userDetails }) {
                 <h3 className='cp-setting-postCard-title'>{title}</h3>
                 <p className='cp-setting-postCard-postBody'>{subTitle}</p>
                 <p className='cp-setting-postCard-footer'>
-                  <span className='cp-setting-postCard-author'> {userDetails.name} </span>
+                  <span className='cp-setting-postCard-author'> {userDetails?.name} </span>
                   <span className='cp-setting-postCard-date'>May 13</span>
                 </p>
               </div>
@@ -187,8 +195,53 @@ function PostEditor({ userDetails }) {
             </div>
             <button className='cp-setting-dangerZone-deletePostCTA'>Delete post</button>
           </div>{" "}
+          <div className='cp-footer'>
+            <div className='cp-footer-mid cp-container'>
+              <div className='cp-footer-mid-left'>
+                <p>Last save</p>
+                <p>March 2025</p>
+              </div>
+              <div className='cp-footer-mid-right'>
+                {/* <button
+                  className='cp-settingBtn'
+                  onClick={(e) => {
+                    setisShowEditor(true);
+                  }}>
+                  Setting
+                </button> */}
+                <button
+                  className='cp-postBtn'
+                  disabled={imageUrl.length <= 1 || keywords.length <= 1 || title.length <= 1 || isPostingContent}
+                  onClick={(e) => {
+                    setisPostingContent(true);
+
+                    handlePostSubmit(e);
+                  }}>
+                  Post
+                </button>
+                {isPostingContent && <Spinner animation='border' style={{ marginLeft: "12px" }} size='sm' className='spinner' variant='dark' />}
+              </div>
+            </div>
+          </div>
         </div>
       ) : null}
+      <Modal show={showToast} size='lg' aria-labelledby='contained-modal-title-vcenter' centered>
+        <Modal.Header>
+          <Modal.Title id='contained-modal-title-vcenter'>Post Created!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            onClick={() => {
+              setshowToast(false);
+              nav("/dashboard");
+            }}>
+            Go to dashboard
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }

@@ -215,19 +215,17 @@ button {
   font-style: normal;
   border: none;
 }
+button:active {
+  color: white;
+  background-color: #1653c9;
+}
 
 button:disabled {
   background: #1c68fc;
   mix-blend-mode: normal;
   opacity: 0.5;
+  cursor: not-allowed;
   color: white;
-
-  cursor: initial;
-}
-
-button:active {
-  color: white;
-  background-color: #1653c9;
 }
 
 button.white {
