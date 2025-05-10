@@ -30,21 +30,7 @@ function Dashboard({ setisLoggedIn, userDetails }) {
             <h4 className="menuText">Post</h4>
           </div>
         </div>
-        <div className="menuBtn">
-          <div className="iconContainer">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M16 11V3H8V9H2V21H22V11H16ZM10 5H14V19H10V5ZM4 11H8V19H4V11ZM20 19H16V13H20V19Z" />
-            </svg>
 
-            <h4 className="menuText">Stats</h4>
-          </div>
-        </div>
         <div className="menuBtn setting">
           <div className="iconContainer">
             <svg
@@ -149,7 +135,7 @@ function Dashboard({ setisLoggedIn, userDetails }) {
           </div>
         </div>
         <div>
-          <Post />
+          <Post userDetails={userDetails} />
         </div>
       </div>
     </div>

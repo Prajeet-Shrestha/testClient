@@ -1,19 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./post.css";
 import PostCard from "../../../components/postCard/PostCard";
 import postPlaceHolder from "../../../assets/post.svg";
 import SkeletonLoader from "../../../components/loader/SkeletonLoader";
 import { useNavigate } from "react-router-dom";
-function Post() {
+import { getUserPost } from "../../../apis/api";
+function Post({ userDetails }) {
   const [isOpenFilter, setisOpenFilter] = useState(false);
   const [isPostLoading, setIsPostLoading] = useState(false);
+  const [postLists, setPostLists] = useState([]);
+
   const nav = useNavigate();
+  const getPosts = async () => {
+    try {
+      setIsPostLoading(true);
+      const res = await getUserPost(userDetails.email);
+      console.log({ res });
+      if (res.status) {
+        setPostLists(res.result);
+      }
+    } catch (error) {
+    } finally {
+      setIsPostLoading(false);
+    }
+  };
+  useEffect(() => {
+    getPosts();
+    return () => {};
+  }, []);
   return (
     <div>
       <div className="postContainer">
         <div className="topBar">
           <div className="typeContent">
-            <h2>All (3)</h2>
+            <h2>All ({postLists.length})</h2>
           </div>
           <div className="postCTA">
             <button
@@ -94,12 +114,17 @@ function Post() {
             </div>
           ) : (
             <div>
-              <PostCard imgUrl={postPlaceHolder} />
-              <PostCard imgUrl={postPlaceHolder} />
-              <PostCard imgUrl={postPlaceHolder} />
-              <PostCard imgUrl={postPlaceHolder} />
-              <PostCard imgUrl={postPlaceHolder} />
-              <PostCard imgUrl={postPlaceHolder} />
+              {postLists.map((data) => {
+                return (
+                  <PostCard
+                    title={data.title}
+                    createdTime={data.createdTime}
+                    description={data.subTitle}
+                    imgUrl={data.thumbnailUrl}
+                    id={data._id}
+                  />
+                );
+              })}
             </div>
           )}
         </div>

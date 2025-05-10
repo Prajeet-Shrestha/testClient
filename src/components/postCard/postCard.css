@@ -1,15 +1,16 @@
 .card {
-  border: none;
+  border: 0.5px solid rgba(128, 128, 128, 0.1);
+  width: 720px;
   box-sizing: border-box;
   border-radius: 4px;
   display: flex;
   flex-direction: row;
-  cursor: pointer;
-  align-items: flex-start;
+  flex-wrap: nowrap;
   padding: 20px;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
-.titleHandler {
+
+.card .titleHandler {
   padding: 0%;
   margin: 0%;
   max-height: 56px;
@@ -21,20 +22,16 @@
   overflow: hidden;
   display: block;
   display: -webkit-box;
-  /* max-width: 200px; */
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
 .card:hover {
   background-color: #fafafa;
 }
 
-.imgPlaceholder {
-  display: none;
-}
-
-.imgPlaceholder.img {
+.card .img img {
   display: initial;
   width: 156px;
   height: 120px;
@@ -43,18 +40,12 @@
   border-radius: 4px;
 }
 
-.img img {
-  width: inherit;
-  height: inherit;
-  border-radius: inherit;
-}
-
-h3 {
+.card h3 {
   padding: 0%;
   margin: 0%;
 }
 
-p.Pbody {
+.card p.Pbody {
   margin-top: 8px;
   max-height: 72px;
   font-size: 16px;
@@ -68,97 +59,100 @@ p.Pbody {
   position: relative;
   overflow: hidden;
   display: block;
+  max-width: 500px;
   display: -webkit-box;
-  /* max-width: 200px; */
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.body {
-  width: 100%;
+.card .body {
   margin-left: 20px;
+  width: fill;
 }
-.body.noImage {
+.card .body.noImage {
   margin-left: 0;
 }
-.bottom {
+.card .bottom {
   margin-top: 16px;
   display: flex;
   font-style: normal;
   align-items: center;
-  /* justify-content: space-between; */
   font-weight: normal;
   color: var(--black-80E);
   font-size: 14px;
   line-height: 20px;
 }
 
-.leftBottom {
+.card .leftBottom {
   display: flex;
   margin-right: 24px;
 }
 
-.rightBottom {
-  /* background-color: red; */
-  height: 20px;
+.card .rightBottom {
+  font-size: 18px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.5);
+}
+.card .rightBottom :hover {
+  color: rgba(0, 0, 0, 0.8);
 }
 
-.vote {
+.card .vote {
   display: flex;
   margin-left: 16px;
   align-items: center;
   margin-right: 16px;
 }
-.edit {
+.card .edit {
   padding: 3px;
 }
 
-.upVote {
+.card .upVote {
   margin-right: 8px;
   color: rgba(0, 0, 0, 0.6);
   padding: 3.67px;
 }
 
-.downVote {
+.card .downVote {
   margin-left: 8px;
   color: rgba(0, 0, 0, 0.6);
   padding: 3.67px;
 }
 
-.upVote:hover,
-.downVote:hover,
-.pin.notPinned:hover,
-.edit:hover {
+.card .upVote:hover,
+.card .downVote:hover,
+.card .pin.notPinned:hover,
+.card .edit:hover {
   background-color: rgba(33, 33, 33, 0.08);
   border-radius: 4px;
 }
 
-.pinned {
+.card .pinned {
   /* background-color: rgb(28, 104, 252); */
   background-color: #ffc700;
   border-radius: 4px;
 }
 
-.views {
+.card .views {
   display: flex;
   align-items: center;
 }
 
-.views svg {
+.card .views svg {
   margin-right: 6px;
 }
 
-.pin {
+.card .pin {
   padding: 2px 4px;
   margin-right: 12px;
 }
 
-.clickable {
+.card .clickable {
   cursor: pointer;
 }
 
-.imgPlaceholder.draftCard-img {
+.card .imgPlaceholder.draftCard-img {
   width: fit-content;
   height: fit-content;
   display: initial;
@@ -173,11 +167,11 @@ p.Pbody {
   padding: 5px 10px;
 }
 
-.skeleton-card {
+.card .skeleton-card {
   display: flex;
 }
 
-.skeleton-card .sk-body {
+.card .skeleton-card .sk-body {
   width: 100%;
   height: 100%;
 }

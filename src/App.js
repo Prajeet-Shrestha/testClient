@@ -34,23 +34,49 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
+    <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path={"/searchResult"} element={<SearchResult />} />
           {isLoggedIn ? (
             <>
-              <Route element={<Navigate to='/dashboard' />} path={"/"} />
-              <Route path={"/post/edit"} element={<PostEditor userDetails={userDetails} />} />
-              <Route path={"/dashboard"} element={<Dashboard userDetails={userDetails} setisLoggedIn={setisLoggedIn} />} />
-              <Route path={"/login"} element={<Navigate to='/dashboard' />} />
+              <Route element={<Navigate to="/dashboard" />} path={"/"} />
+              <Route
+                path={"/post/edit"}
+                element={<PostEditor userDetails={userDetails} />}
+              />{" "}
+              <Route
+                path={"/post/edit/:postId"}
+                element={<PostEditor userDetails={userDetails} />}
+              />
+              <Route
+                path={"/dashboard"}
+                element={
+                  <Dashboard
+                    userDetails={userDetails}
+                    setisLoggedIn={setisLoggedIn}
+                  />
+                }
+              />
+              <Route path={"/login"} element={<Navigate to="/dashboard" />} />
             </>
           ) : (
             <>
-              <Route element={<Navigate to='/login' />} path={"/"} />
-              <Route path={"/signUp"} element={<SignUpPage setisLoggedIn={setisLoggedIn} />} />
-              <Route path={"/login"} element={<Login setisLoggedIn={setisLoggedIn} />} />
-              <Route path={"/dashboard"} element={<Navigate to='/login' />} />
+              <Route element={<Navigate to="/login" />} path={"/"} />
+              <Route
+                path={"/signUp"}
+                element={<SignUpPage setisLoggedIn={setisLoggedIn} />}
+              />
+              <Route
+                path={"/login"}
+                element={<Login setisLoggedIn={setisLoggedIn} />}
+              />
+              <Route path={"/dashboard"} element={<Navigate to="/login" />} />
+              <Route path={"/post/edit"} element={<Navigate to="/login" />} />
+              <Route
+                path={"/post/edit/:postId"}
+                element={<Navigate to="/login" />}
+              />
             </>
           )}
         </Routes>
